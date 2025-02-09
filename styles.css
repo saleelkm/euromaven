@@ -515,3 +515,25 @@ button:hover{
         font-size: 16px;
     }
 }
+
+.courseContainer{
+    width: auto;
+    height: auto;
+    overflow-x: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.courseCard{
+    width: 80%;
+    max-width: 300px;
+    height: auto;
+    border: 1px solid var(--yellow);
+    border-radius: 1rem;
+    margin: 0 1rem;
+    flex-shrink: 0;
+}
+.courseCard > img {
+    width: 100%;
+    border-radius: 1rem 1rem 0 0;
+}

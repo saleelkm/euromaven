@@ -15,6 +15,85 @@ function autoScrollLeft() {
 
 setInterval(autoScrollLeft, 5000);
 
+//Course Cards Home Starts Here
+
+document.addEventListener('DOMContentLoaded', function() {
+    const container = document.querySelector(".section4coursesContainer");
+    const cards = container.querySelectorAll(".section4courseCard");
+    const numberOfCards = cards.length;
+    const style = window.getComputedStyle(cards[0]);
+    const cardWidth = cards[0].offsetWidth + parseInt(style.marginLeft) + parseInt(style.marginRight);
+    const containerWidth = container.offsetWidth;
+    const scrollPositions = [];
+    let currentScroll = container ? container.scrollLeft : 0;
+    const lastScrollPosition = scrollPositions[scrollPositions.length - 1];
+    let autoScrollInterval;
+
+    for (let i = 1; i < numberOfCards+1; i++) {
+        scrollPositions.push(cardWidth * i);
+    }    
+    function scrollToNextPosition() {
+        if (!container) return;
+    
+        currentScroll = container.scrollLeft;
+    
+        for (let i = 0; i < scrollPositions.length; i++) {
+          if (currentScroll < scrollPositions[i]) {
+            container.scrollTo({
+              left: scrollPositions[i],
+              behavior: 'smooth'
+            });
+            break;
+          }
+        }
+      }
+    
+      function scrollToBeginning() {
+        if (!container) return;
+    
+        container.scrollTo({
+          left: 0,
+          behavior: 'smooth'
+        });
+      }
+      function autoScroll() {
+        if (!container) return;
+    
+        currentScroll = container.scrollLeft;
+        const containerWidth = container.offsetWidth;
+        const lastScrollPosition = scrollPositions[scrollPositions.length - 1];
+    
+        if (currentScroll + containerWidth >= lastScrollPosition) {
+          scrollToBeginning(); // Call the new function
+        } else {
+          scrollToNextPosition(); // Call the original function
+        }
+      }
+    
+      function startAutoScroll() {
+        autoScrollInterval = setInterval(autoScroll, 5000);
+      }
+    
+      function stopAutoScroll() {
+        clearInterval(autoScrollInterval);
+      }
+    
+      if (container) {
+        container.addEventListener('mouseenter', stopAutoScroll);
+        container.addEventListener('mouseleave', startAutoScroll);
+    
+        startAutoScroll();
+      } else {
+        console.error("Container not found. Auto-scrolling will not be initialized.");
+      }
+
+});
+
+//Course Cards Home Ends here
+
+
+
+//Placement logo data
 const placementLogos = {
     "sets": [
       {
@@ -127,3 +206,404 @@ const placementLogos = {
       addImagesToContainer(set2Container, set.images);
     }
   });
+
+  // Courses
+
+  const courseCardsData = {
+    "certificate": [
+        {
+            "title": "bachelor of business administration (BBA)",
+            "img": "assets/images/hero.png",
+            "eligibility": "for students passed class 12 exam",
+            "key_points": [
+                {
+                    "title": "degree certificate",
+                    "img": "assets/images/icons/certificate.svg"
+                },
+                {
+                    "title": "degree certificate",
+                    "img": "assets/images/icons/certificate.svg"
+                },
+                {
+                    "title": "degree certificate",
+                    "img": "assets/images/icons/certificate.svg"
+                },
+                {
+                    "title": "degree certificate",
+                    "img": "assets/images/icons/certificate.svg"
+                },
+            ],
+            "duration": [
+                "3 Years", "6 Months"
+            ]
+        },
+        {
+            "title": "bachelor of business administration (BBA)",
+            "img": "assets/images/hero.png",
+            "eligibility": "for students passed class 12 exam",
+            "key_points": [
+                {
+                    "title": "degree certificate",
+                    "img": "assets/images/icons/certificate.svg"
+                },
+                {
+                    "title": "degree certificate",
+                    "img": "assets/images/icons/certificate.svg"
+                },
+                {
+                    "title": "degree certificate",
+                    "img": "assets/images/icons/certificate.svg"
+                },
+                {
+                    "title": "degree certificate",
+                    "img": "assets/images/icons/certificate.svg"
+                },
+            ],
+            "duration": [
+                "3 Years", "6 Months"
+            ]
+        },
+        {
+            "title": "bachelor of business administration (BBA)",
+            "img": "assets/images/hero.png",
+            "eligibility": "for students passed class 12 exam",
+            "key_points": [
+                {
+                    "title": "degree certificate",
+                    "img": "assets/images/icons/certificate.svg"
+                },
+                {
+                    "title": "degree certificate",
+                    "img": "assets/images/icons/certificate.svg"
+                },
+                {
+                    "title": "degree certificate",
+                    "img": "assets/images/icons/certificate.svg"
+                },
+                {
+                    "title": "degree certificate",
+                    "img": "assets/images/icons/certificate.svg"
+                },
+            ],
+            "duration": [
+                "3 Years", "6 Months"
+            ]
+        },
+        {
+            "title": "bachelor of business administration (BBA)",
+            "img": "assets/images/hero.png",
+            "eligibility": "for students passed class 12 exam",
+            "key_points": [
+                {
+                    "title": "degree certificate",
+                    "img": "assets/images/icons/certificate.svg"
+                },
+                {
+                    "title": "degree certificate",
+                    "img": "assets/images/icons/certificate.svg"
+                },
+                {
+                    "title": "degree certificate",
+                    "img": "assets/images/icons/certificate.svg"
+                },
+                {
+                    "title": "degree certificate",
+                    "img": "assets/images/icons/certificate.svg"
+                },
+            ],
+            "duration": [
+                "3 Years", "6 Months"
+            ]
+        },
+        {
+            "title": "bachelor of business administration (BBA)",
+            "img": "assets/images/hero.png",
+            "eligibility": "for students passed class 12 exam",
+            "key_points": [
+                {
+                    "title": "degree certificate",
+                    "img": "assets/images/icons/certificate.svg"
+                },
+                {
+                    "title": "degree certificate",
+                    "img": "assets/images/icons/certificate.svg"
+                },
+                {
+                    "title": "degree certificate",
+                    "img": "assets/images/icons/certificate.svg"
+                },
+                {
+                    "title": "degree certificate",
+                    "img": "assets/images/icons/certificate.svg"
+                },
+            ],
+            "duration": [
+                "3 Years", "6 Months"
+            ]
+        }
+    ],
+    "under_graduate": [
+        {
+            "title": "bachelor of commerce",
+            "img": "assets/images/hero.png",
+            "eligibility": "for students passed class 12 exam",
+            "key_points": [
+                {
+                    "title": "degree certificate",
+                    "img": "assets/images/icons/certificate.svg"
+                },
+                {
+                    "title": "degree certificate",
+                    "img": "assets/images/icons/certificate.svg"
+                },
+                {
+                    "title": "degree certificate",
+                    "img": "assets/images/icons/certificate.svg"
+                },
+                {
+                    "title": "degree certificate",
+                    "img": "assets/images/icons/certificate.svg"
+                },
+            ],
+            "duration": [
+                "3 Years", "6 Months"
+            ]
+        },
+        {
+            "title": "bachelor of commerce",
+            "img": "assets/images/hero.png",
+            "eligibility": "for students passed class 12 exam",
+            "key_points": [
+                {
+                    "title": "degree certificate",
+                    "img": "assets/images/icons/certificate.svg"
+                },
+                {
+                    "title": "degree certificate",
+                    "img": "assets/images/icons/certificate.svg"
+                },
+                {
+                    "title": "degree certificate",
+                    "img": "assets/images/icons/certificate.svg"
+                },
+                {
+                    "title": "degree certificate",
+                    "img": "assets/images/icons/certificate.svg"
+                },
+            ],
+            "duration": [
+                "3 Years", "6 Months"
+            ]
+        },
+        {
+            "title": "bachelor of commerce",
+            "img": "assets/images/hero.png",
+            "eligibility": "for students passed class 12 exam",
+            "key_points": [
+                {
+                    "title": "degree certificate",
+                    "img": "assets/images/icons/certificate.svg"
+                },
+                {
+                    "title": "degree certificate",
+                    "img": "assets/images/icons/certificate.svg"
+                },
+                {
+                    "title": "degree certificate",
+                    "img": "assets/images/icons/certificate.svg"
+                },
+                {
+                    "title": "degree certificate",
+                    "img": "assets/images/icons/certificate.svg"
+                },
+            ],
+            "duration": [
+                "3 Years", "6 Months"
+            ]
+        },
+        {
+            "title": "bachelor of commerce",
+            "img": "assets/images/hero.png",
+            "eligibility": "for students passed class 12 exam",
+            "key_points": [
+                {
+                    "title": "degree certificate",
+                    "img": "assets/images/icons/certificate.svg"
+                },
+                {
+                    "title": "degree certificate",
+                    "img": "assets/images/icons/certificate.svg"
+                },
+                {
+                    "title": "degree certificate",
+                    "img": "assets/images/icons/certificate.svg"
+                },
+                {
+                    "title": "degree certificate",
+                    "img": "assets/images/icons/certificate.svg"
+                },
+            ],
+            "duration": [
+                "3 Years", "6 Months"
+            ]
+        },
+        {
+            "title": "bachelor of commerce",
+            "img": "assets/images/hero.png",
+            "eligibility": "for students passed class 12 exam",
+            "key_points": [
+                {
+                    "title": "degree certificate",
+                    "img": "assets/images/icons/certificate.svg"
+                },
+                {
+                    "title": "degree certificate",
+                    "img": "assets/images/icons/certificate.svg"
+                },
+                {
+                    "title": "degree certificate",
+                    "img": "assets/images/icons/certificate.svg"
+                },
+                {
+                    "title": "degree certificate",
+                    "img": "assets/images/icons/certificate.svg"
+                },
+            ],
+            "duration": [
+                "3 Years", "6 Months"
+            ]
+        }
+    ],
+    "post_graduate": [
+        {
+            "title": "master of commerce",
+            "img": "assets/images/hero.png",
+            "eligibility": "for students passed class 12 exam",
+            "key_points": [
+                {
+                    "title": "degree certificate",
+                    "img": "assets/images/icons/certificate.svg"
+                },
+                {
+                    "title": "degree certificate",
+                    "img": "assets/images/icons/certificate.svg"
+                },
+                {
+                    "title": "degree certificate",
+                    "img": "assets/images/icons/certificate.svg"
+                },
+                {
+                    "title": "degree certificate",
+                    "img": "assets/images/icons/certificate.svg"
+                },
+            ],
+            "duration": [
+                "3 Years", "6 Months"
+            ]
+        },
+        {
+            "title": "master of commerce",
+            "img": "assets/images/hero.png",
+            "eligibility": "for students passed class 12 exam",
+            "key_points": [
+                {
+                    "title": "degree certificate",
+                    "img": "assets/images/icons/certificate.svg"
+                },
+                {
+                    "title": "degree certificate",
+                    "img": "assets/images/icons/certificate.svg"
+                },
+                {
+                    "title": "degree certificate",
+                    "img": "assets/images/icons/certificate.svg"
+                },
+                {
+                    "title": "degree certificate",
+                    "img": "assets/images/icons/certificate.svg"
+                },
+            ],
+            "duration": [
+                "3 Years", "6 Months"
+            ]
+        },
+        {
+            "title": "master of commerce",
+            "img": "assets/images/hero.png",
+            "eligibility": "for students passed class 12 exam",
+            "key_points": [
+                {
+                    "title": "degree certificate",
+                    "img": "assets/images/icons/certificate.svg"
+                },
+                {
+                    "title": "degree certificate",
+                    "img": "assets/images/icons/certificate.svg"
+                },
+                {
+                    "title": "degree certificate",
+                    "img": "assets/images/icons/certificate.svg"
+                },
+                {
+                    "title": "degree certificate",
+                    "img": "assets/images/icons/certificate.svg"
+                },
+            ],
+            "duration": [
+                "3 Years", "6 Months"
+            ]
+        },
+        {
+            "title": "master of commerce",
+            "img": "assets/images/hero.png",
+            "eligibility": "for students passed class 12 exam",
+            "key_points": [
+                {
+                    "title": "degree certificate",
+                    "img": "assets/images/icons/certificate.svg"
+                },
+                {
+                    "title": "degree certificate",
+                    "img": "assets/images/icons/certificate.svg"
+                },
+                {
+                    "title": "degree certificate",
+                    "img": "assets/images/icons/certificate.svg"
+                },
+                {
+                    "title": "degree certificate",
+                    "img": "assets/images/icons/certificate.svg"
+                },
+            ],
+            "duration": [
+                "3 Years", "6 Months"
+            ]
+        },
+        {
+            "title": "master of commerce",
+            "img": "assets/images/hero.png",
+            "eligibility": "for students passed class 12 exam",
+            "key_points": [
+                {
+                    "title": "degree certificate",
+                    "img": "assets/images/icons/certificate.svg"
+                },
+                {
+                    "title": "degree certificate",
+                    "img": "assets/images/icons/certificate.svg"
+                },
+                {
+                    "title": "degree certificate",
+                    "img": "assets/images/icons/certificate.svg"
+                },
+                {
+                    "title": "degree certificate",
+                    "img": "assets/images/icons/certificate.svg"
+                },
+            ],
+            "duration": [
+                "3 Years", "6 Months"
+            ]
+        }
+    ]
+  }
