@@ -17,8 +17,6 @@
     --semibold: 600;
     --medium: 500;
     --regular: 400;
-}
-html {
     font-size: 14px;
 }
 body{
@@ -130,14 +128,15 @@ button:hover{
 .section2subText{
     flex-direction: column;
     border-bottom: 1px solid var(--yellow);
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
 }
 .section2 > div:first-child {
     border-top: 1px solid var(--yellow);
 }
 .section2subText > h4{
-    font-size: var(--h5);
+    font-size: var(--h6);
     font-weight: var(--medium);
+    margin-top: -1rem;
 }
 .section2subNo{
     color: var(--yellow);
@@ -165,6 +164,7 @@ button:hover{
 .section3sub > h3 {
     font-size: var(--h4);
     font-weight: var(--semibold);
+    line-height: var(--h3);
     margin-bottom: 1rem;
 }
 
@@ -292,8 +292,10 @@ button:hover{
     border-bottom: none;
 }
 .section5sub > h5 {
-    font-size: var(--h5);
+    font-size: var(--h6);
     font-weight: var(--medium);
+    line-height: var(--h5);
+    margin-bottom: 0.5rem;
 }
 
 .section6 {
@@ -308,6 +310,7 @@ button:hover{
 .section6head > h2 {
     font-size: var(--h2);
     font-weight: var(--semibold);
+    line-height: var(--h1);
 }
 .section6Details{
     display: flex;
@@ -316,7 +319,7 @@ button:hover{
 .section6Details > h3 {
     font-size: var(--h4);
     font-weight: var(--semibold);
-    line-height: var(--h4);
+    line-height: var(--h3);
 }
 .section7{
     background-color: var(--yellow);
@@ -363,6 +366,7 @@ button:hover{
 .section8sub > h2, .section9sub > h2, .section10sub > h2 {
     font-size: var(--h4);
     font-weight: var(--semibold);
+    line-height: var(--h3);
 }
 
 .section11{
@@ -387,8 +391,9 @@ button:hover{
     margin-bottom: 1rem;
 }
 .section11sub > h5 {
-    font-size: var(--h5);
+    font-size: var(--h6);
     font-weight: var(--medium);
+    margin-bottom: 0.5rem;
 }
 
 .section12{
@@ -511,29 +516,7 @@ button:hover{
 }
 
 @media (min-width: 768px) {
-    html {
+    :root{
         font-size: 16px;
     }
-}
-
-.courseContainer{
-    width: auto;
-    height: auto;
-    overflow-x: auto;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-}
-.courseCard{
-    width: 80%;
-    max-width: 300px;
-    height: auto;
-    border: 1px solid var(--yellow);
-    border-radius: 1rem;
-    margin: 0 1rem;
-    flex-shrink: 0;
-}
-.courseCard > img {
-    width: 100%;
-    border-radius: 1rem 1rem 0 0;
 }
