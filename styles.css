@@ -321,6 +321,7 @@ button:hover{
     font-weight: var(--semibold);
     line-height: var(--h3);
 }
+
 .section7{
     background-color: var(--yellow);
     position: relative;
@@ -519,4 +520,254 @@ button:hover{
     :root{
         font-size: 16px;
     }
+    .hero{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .heroMain{
+        text-align: left;
+    }
+    .heroSub{
+        text-align: right;
+        width: 25%;
+    }
+    .applyBtn{
+        margin-right: 0;
+    }
+
+    .section1{
+        display: flex;
+        flex-direction: row;
+        margin: 1rem;
+    }
+
+    .section2subText{
+        display: flex;
+        flex-direction: row;
+        border-bottom: 1px solid var(--yellow);
+        padding-bottom: 0;
+        align-items: center;
+    }
+    .section2subNo{
+        border-style: solid;
+        padding: 0 0.5rem;
+        border-radius: var(--fontXSmall);
+        margin: 1rem;
+    }
+    #section2subNoOne{
+        padding: 0 0.68rem;
+    }
+    .section2subText > h4{
+        margin-top: 0;
+        width: 25%;
+    }
+
+    .section3{
+        display: flex;
+        flex-direction: row;
+        margin: 2rem 1rem;
+        justify-content: space-between;
+    }
+    .section3sub{
+        width: 75%;
+    }
+    .section4{
+        align-items: center;
+        margin: 3rem 0;
+    }
+    .section4 > h2{
+        margin: 2rem 1rem;
+    }
+    .section4 > h3{
+        margin-bottom: 2rem;
+    }
+    .section4courseBtns{
+        margin-bottom: 2rem;
+        font-size: var(--h6);
+    }
+    .section4courseBtns > a{
+        padding: 1rem;
+    }
+    .section4courseCard{
+        max-width: 300px;
+    }
+    
+    .section5{
+        display: flex;
+        flex-direction: row;
+    }
+    .section5sub{
+        border-right: 1px solid var(--yellow);
+        border-bottom: none;
+        width: 20%;
+    }
+    .section5sub:last-child {
+        border-right: none;
+        border-bottom: none;
+    }
+
+    .section6 {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 1rem;
+    }
+    .section6head{
+        width: 33%;
+    }
+    .section6Details{
+        width: 33%;
+    }
+
+    .section8 , .section10{
+        display: flex;
+        flex-direction: row;
+        margin: 2rem 1rem;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .section9 {
+        display: flex;
+        flex-direction: row-reverse;
+        margin: 2rem 1rem;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .section8 > img, .section9 > img, .section10 > img {
+        width: 40%; 
+        height: max-content;
+    }
+    .section8sub, .section9sub, .section10sub {
+       width: 50%;
+       margin: 1rem;
+    }
+    
+    .section11{
+        display: flex;
+        flex-direction: row;
+    }
+    .section11sub{
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        border-bottom: none;
+        border-right: 1px solid var(--yellow);
+        width: 16.65%;
+    }
+    .section11 > div:last-child{
+        border-right: none;
+    }
 }
+
+/* Courses Page */
+
+ .courseSearchBar{
+    flex-grow: 1;
+    height: 3rem;
+    margin: 1rem ;
+    border: 1px solid var(--yellow);
+    border-radius: 1rem;
+    padding: 1rem;
+    font-size: var(--p);
+    background-image: url('assets/images/icons/search.svg');
+    background-position: right 0.5rem center; 
+    background-repeat: no-repeat;
+ }
+
+ .sectionShowing{
+    align-items: baseline;
+    margin: 0 1rem;
+ }
+ .sectionShowing > h2{
+    font-size: var(--h5);
+ }
+.coursesDisplay{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    height: max-content;
+}
+ .courseDisplayCard{
+    margin-bottom: 1rem;
+    border: 1px solid var(--lightBlue);
+    border-radius: 1rem;
+ }
+ .courseDisplayCard > img{
+    width: 20%;
+    height: fit-content;
+    margin: var(--fontXSmall);
+    border-radius: var(--fontXSmall);
+ }
+ .courseDisplayCardDetails{
+    margin: var(--fontXSmall) var(--fontXSmall) var(--fontXSmall) 0;
+ }
+ .courseDisplayCardDetails > h2{
+    line-height: var(--h5);
+    font-size: var(--h6);
+    font-weight: var(--semibold);
+ }
+ .courseDisplayCardDetailsAddon{
+    justify-content: left;
+    align-items: baseline;
+ }
+ .courseDisplayCardDetailsAddon > p {
+    font-size: var(--fontSmall);
+ }
+ .courseDisplayCardDetailsAddon > h3 {
+    font-size: var(--h6);
+    line-height: var(--h5);
+    font-weight: var(--semibold);
+ }
+ .courseDisplayCardDetailsEligibility{
+    font-size: var(--fontSmall);
+ }
+ .courseDisplayCardDetailsDuration{
+    font-size: var(--fontSmall);
+    border: 1px solid var(--blue);
+    border-radius: 0.3rem;
+    padding: 0 0.3rem;
+    width: max-content;
+    margin: 0.3rem 0;
+ }
+ .courseDisplayCardDetailsCategory{
+    background-color: var(--lightBlue);
+    border-radius: 0.3rem;
+    color: white;
+    font-size: var(--fontSmall);
+    padding: 0 0.3rem;
+    margin: 0.3rem 0 0.3rem 0.6rem;
+    width: max-content;
+ }
+ .courseDisplayCardDetailsPriceContainer{
+    align-items: baseline;
+ }
+ .courseDisplayCardDetailsPrice{
+    font-size: var(--h6);
+    font-weight: var(--semibold);
+ }
+
+ @media (min-width: 768px) {
+    .courseSearchBar{
+        flex-grow: 0;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .sectionShowing{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .coursesDisplay{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        gap: 1rem;
+        justify-content: center;
+    }
+    .courseDisplayCard{
+        width: 45%;
+        margin-bottom: 0;
+    }
+ }
